@@ -1,0 +1,15 @@
+MasterClass
+playground
+sesion*
+*.pdf
+*.zip
+*.log
+.parcel-cache
+dist
+node_modules
+package-lock.json
+yarn.lock
+
+
+build/
+transpiled/

@@ -1,0 +1,24 @@
+input {
+  padding: 15px;
+}
+
+input:hover {
+  background-color: darkred;
+}
+
+input:focus {
+  background-color: darkolivegreen;
+  color: white;
+}
+
+.container div:nth-child(2n) {
+  color: darkorange;
+}
+
+.container div:nth-child(2n+1) {
+  color: darkgreen;
+}
+
+.container div:last-child {
+  color: red;
+}

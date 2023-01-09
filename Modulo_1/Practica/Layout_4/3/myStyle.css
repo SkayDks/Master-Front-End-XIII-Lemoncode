@@ -1,0 +1,25 @@
+body {
+  font-family: sans-serif;
+}
+
+html {
+}
+
+header {
+  --primary-color: darkorange;
+  background-color: var(--primary-color);
+  padding: 25px;
+}
+
+main {
+  --primary-color: green;
+  color: var(--primary-color);
+  font-size: 125%;
+  margin: 25px;
+}
+
+.card {
+  border: 2px solid var(--primary-color, red);
+  padding: 15px;
+  border-radius: 8px;
+}

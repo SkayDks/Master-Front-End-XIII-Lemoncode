@@ -1,0 +1,12 @@
+.container {
+  padding: 15px;
+  border: 1px solid black;
+  P{
+font-size: 125%;
+  }
+
+  & > p{
+    font-style: italic;
+    font-weight: bold;
+  }
+}

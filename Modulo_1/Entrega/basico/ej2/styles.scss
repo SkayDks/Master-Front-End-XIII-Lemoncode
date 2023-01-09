@@ -1,0 +1,53 @@
+@use "theme-a" as *;
+
+.flex-row {
+  display: flex;
+  max-width: 300px;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+body {
+  @extend .flex-column;
+
+  .type-boxes {
+    font-weight: bold;
+    @extend .flex-row;
+    .base {
+      background-color: $base-color;
+    }
+    .important {
+      background-color: darken($color: $base-color, $amount: 25%);
+      color: white;
+    }
+    .warning {
+      background-color: lighten($color: $base-color, $amount: 25%);
+    }
+    .disable {
+      background-color: desaturate($color: $base-color, $amount: 65%);
+    }
+  }
+  .theme-font {
+    @extend .flex-row;
+    .primary-font {
+      font-family: $primary-font;
+    }
+    .secondary-font {
+      font-family: $secondary-font;
+    }
+  }
+}
+
+.box {
+  @include box();
+}
+
+.shadow-box {
+  @include shadow-box();
+}

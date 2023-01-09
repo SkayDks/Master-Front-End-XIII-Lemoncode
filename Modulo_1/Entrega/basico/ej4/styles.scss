@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.game-container {
+  background-color: rgb(18, 18, 18);
+  padding: 50px;
+  height: calc(100vh - 100px);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  overflow: auto;
+  gap: 15px;
+  justify-content: space-around;
+  > article {
+    border: 1px solid white;
+    background-color: rgb(32, 32, 32);
+    border-radius: 10px;
+    color: white;
+    display: grid;
+
+    img {
+      border-radius: 10px 10px 0 0;
+      width: 100%;
+    }
+    .title {
+      margin: 10px;
+      font-size: 1.2rem;
+    }
+    .text {
+      margin: 10px;
+    }
+    .published {
+      margin: 10px;
+    }
+    .button {
+      font-size: 1.05rem;
+      margin: 10px;
+      background-color: rgb(50, 50, 50);
+      border: 1px solid rgb(222, 222, 222);
+      height: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        cursor: pointer;
+        background-color: rgb(18, 18, 18);
+      }
+    }
+  }
+}

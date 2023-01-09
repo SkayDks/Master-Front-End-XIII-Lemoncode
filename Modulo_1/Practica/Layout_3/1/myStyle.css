@@ -1,0 +1,35 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+}
+
+header {
+  height: 75px;
+  background-color: cadetblue;
+}
+
+main {
+  flex: 1;
+  background-color: chocolate;
+  display: flex;
+  flex-direction: row;
+}
+
+footer {
+  height: 150px;
+  background-color: crimson;
+}
+
+.menu {
+  width: 150px;
+  background-color: khaki;
+}
+
+.content {
+  flex: 1;
+  background-color: blueviolet;
+}

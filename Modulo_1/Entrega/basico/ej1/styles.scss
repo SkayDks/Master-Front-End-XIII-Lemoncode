@@ -1,0 +1,39 @@
+$base-colors: red, blue, green;
+
+@each $color in $base-colors {
+  .#{"" + $color} {
+    .base-color {
+      background-color: $color;
+    }
+    @for $i from 1 through 4 {
+      .darken-#{$i} {
+        background-color: darken($color: $color, $amount: $i * 5);
+      }
+      .lighten-#{$i} {
+        background-color: lighten($color: $color, $amount: $i * 5);
+      }
+    }
+  }
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  .container {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-size: 1.1rem;
+    gap: 2px;
+    .box {
+      border-radius: 5px;
+      border: 1px solid black;
+      height: 100px;
+      width: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
