@@ -27,14 +27,15 @@ export const Dialog: React.FC<DialogFullProps> = ({
   handelClickClose,
   ...props
 }) => {
+  const {avatar_url, id, name, nick} = avatar;
   return (
     <DialogMui {...props}>
       <DialogContent>
-        <img src={avatar.avatar_url}></img>
+        <img src={avatar_url}></img>
         <DialogContentText>
-          <Typography>ID: {avatar.id}</Typography>
-          <Typography>Name: {avatar.name}</Typography>          
-          { avatar.nick ? <Typography>Nick: {avatar.nick}</Typography> : <></>}
+          <Typography>ID: {id}</Typography>
+          <Typography>Name: {name}</Typography>          
+          { nick ? <Typography>Nick: {nick}</Typography> : <></>}
         </DialogContentText>
       </DialogContent>
       <DialogActions>

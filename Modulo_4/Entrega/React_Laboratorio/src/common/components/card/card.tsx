@@ -10,8 +10,9 @@ interface cardIF {
   name: string;
 }
 
-export const Card: React.FC<cardIF> = ({ avatar_url, id, name }) => {
+export const Card: React.FC<cardIF> = (props) => {
   const [open, setOpen] = React.useState<boolean>(false);
+  const { avatar_url, id, name } = props;
   const handelClickOpen = () => {
     setOpen(true);
   };
@@ -35,11 +36,7 @@ export const Card: React.FC<cardIF> = ({ avatar_url, id, name }) => {
           <Button onClick={handelClickOpen}>More info</Button>
         </CardActions>
       </CardMui>
-      <Dialog
-        avatar={{ avatar_url, id, name }}
-        handelClickClose={handelClickClose}
-        open={open}
-      />
+      <Dialog avatar={props} handelClickClose={handelClickClose} open={open} />
     </>
   );
 };
