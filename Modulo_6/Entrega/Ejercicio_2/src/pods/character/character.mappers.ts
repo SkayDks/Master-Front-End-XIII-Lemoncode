@@ -6,6 +6,7 @@ export const mapCharacterFromApiToVm = (
 ): viewModel.Character => ({
   ...character,
   id: character.id.toString(),
+  bestSentences: character.bestSentences,
   picture: character.image,
   name: character.name,
   species: character.species,
@@ -21,6 +22,7 @@ export const mapCharacterFromVmToApi = (
   ({
     ...character,
     id: parseInt(character.id),
+    bestSentences: character.bestSentences,
     image: character.picture,
     name: character.name,
     species: character.species,
@@ -29,3 +31,21 @@ export const mapCharacterFromVmToApi = (
     status: character.status,
     location: { name: character.location },
   } as unknown as apiModel.CharacterEntityApi);
+
+// Experimentar en un futuro
+/* 
+  
+const mapBestSentencesFromApiToVm = (
+  bestSenteces: apiModel.BestSentences
+): viewModel.BestSentences => ({
+  id: bestSenteces.id.toString(),
+  name: bestSenteces.id.toString(),
+  sentence: bestSenteces.sentence,
+});
+
+export const mapCollectionBestSentecesFromApiToVm = (
+  collectionBestSentences: apiModel.BestSentences[]
+): viewModel.BestSentences[] =>
+  collectionBestSentences.map((bestSenteces) =>
+    mapBestSentencesFromApiToVm(bestSenteces)
+  ); */

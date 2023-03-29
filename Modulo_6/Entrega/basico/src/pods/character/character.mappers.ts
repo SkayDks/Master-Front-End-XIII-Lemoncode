@@ -1,7 +1,7 @@
 import * as apiModel from './api/character.api-model';
 import * as viewModel from './character.vm';
 
-export const mapcharacterFromApiToVm = (
+export const mapCharacterFromApiToVm = (
   character: apiModel.CharacterEntityApi
 ): viewModel.Character => ({
   ...character,
@@ -15,7 +15,7 @@ export const mapcharacterFromApiToVm = (
   location: character.location.name,
 });
 
-export const mapcharacterFromVmToApi = (
+export const mapCharacterFromVmToApi = (
   character: viewModel.Character
 ): apiModel.CharacterEntityApi =>
   ({

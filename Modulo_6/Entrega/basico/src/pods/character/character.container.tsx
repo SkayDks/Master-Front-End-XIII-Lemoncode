@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import * as api from './api';
 import { createEmptyCharacter, Character } from './character.vm';
-import { mapcharacterFromApiToVm, mapcharacterFromVmToApi } from './character.mappers';
+import { mapCharacterFromApiToVm, mapCharacterFromVmToApi } from './character.mappers';
 import { Lookup } from 'common/models';
 import { CharacterComponent } from './character.component';
 
@@ -17,21 +17,21 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
     setStatus(apiStatus);
   };
 
-  const handleLoadcharacter = async () => {
-    const apicharacter = await api.getcharacter(id);
-    setcharacter(mapcharacterFromApiToVm(apicharacter));
+  const handleLoadCharacter = async () => {
+    const apiCharacter = await api.getCharacter(id);
+    setcharacter(mapCharacterFromApiToVm(apiCharacter));
   };
 
   React.useEffect(() => {
     if (id) {
-      handleLoadcharacter();
+      handleLoadCharacter();
     }
     handleLoadStatusCollection();
   }, []);
 
   const handleSave = async (character: Character) => {
-    const apicharacter = mapcharacterFromVmToApi(character);
-    const success = await api.savecharacter(apicharacter);
+    const apiCharacter = mapCharacterFromVmToApi(character);
+    const success = await api.saveCharacter(apiCharacter);
     if (success) {
       navigate(-1);
     } else {
