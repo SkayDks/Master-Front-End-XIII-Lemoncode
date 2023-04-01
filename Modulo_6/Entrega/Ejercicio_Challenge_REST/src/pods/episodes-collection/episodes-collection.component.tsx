@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { EpisodesEntityVm } from './episodes-collection.vm';
 import { EpisodesCard } from './components/episode-card.component';
 import * as classes from './episodes-collection.styles';
@@ -14,17 +14,14 @@ export const EpisodesCollectionComponent: React.FunctionComponent<Props> = (
   const { episodesCollection, onInfoEpisodes } = props;
 
   return (
-      <div className={classes.root}>
-        <ul className={classes.list}>
-          {episodesCollection.map((episodes) => (
-            <li key={episodes.id}>
-              <EpisodesCard
-                episodes={episodes}
-                onInfoEpisodes={onInfoEpisodes}
-              />
-            </li>
-          ))}
-        </ul>
-      </div>
+    <div className={classes.root}>
+      <ul className={classes.list}>
+        {episodesCollection.map((episodes) => (
+          <li key={episodes.id}>
+            <EpisodesCard episodes={episodes} onInfoEpisodes={onInfoEpisodes} />
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };

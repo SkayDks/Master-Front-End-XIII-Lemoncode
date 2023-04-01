@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import {
   CharacterEntityVm,
   InfoCharacterCollectionVm,
@@ -18,8 +18,8 @@ export const useCharacterCollection = () => {
   const [infoCollection, setInfoColletion] =
     React.useState<InfoCharacterCollectionVm>({ pages: 1 });
 
-  const loadCharacterCollection = (page: number) => {
-    getCharacterCollection(page).then((data) => {
+  const loadCharacterCollection = (page: number, filter?: string) => {
+    getCharacterCollection(page, filter).then((data) => {
       setCharacterCollection(
         mapToCollection(data.results, mapCharacterFromApiToVm)
       );

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import {
   EpisodesEntityVm,
   InfoEpisodesCollectionVm,
@@ -18,8 +18,8 @@ export const useEpisodesCollection = () => {
   const [infoCollection, setInfoColletion] =
     React.useState<InfoEpisodesCollectionVm>({ pages: 1 });
 
-  const loadEpisodesCollection = (page: number) => {
-    getEpisodesCollection(page).then((data) => {
+  const loadEpisodesCollection = (page: number, filter?: string) => {
+    getEpisodesCollection(page, filter).then((data) => {
       setEpisodesCollection(
         mapToCollection(data.results, mapEpisodesFromApiToVm)
       );

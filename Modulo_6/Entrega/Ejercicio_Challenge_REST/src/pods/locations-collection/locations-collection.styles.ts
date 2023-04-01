@@ -22,3 +22,12 @@ export const list = css`
     grid-template-columns: repeat(3, 1fr);
   }
 `;
+
+export const footer = css`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: sticky;
+  bottom: 0px;
+  background: white;
+`;

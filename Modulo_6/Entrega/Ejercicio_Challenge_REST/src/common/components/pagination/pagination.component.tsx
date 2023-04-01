@@ -1,5 +1,4 @@
-import * as React from 'react';
-import Typography from '@mui/material/Typography';
+import React from 'react';
 import Pagination, { PaginationProps } from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import * as classes from './pagination.styles';

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import {
   LocationsEntityVm,
   InfoLocationsCollectionVm,
@@ -18,8 +18,8 @@ export const useLocationsCollection = () => {
   const [infoCollection, setInfoColletion] =
     React.useState<InfoLocationsCollectionVm>({ pages: 1 });
 
-  const loadLocationsCollection = (page: number) => {
-    getLocationsCollection(page).then((data) => {
+  const loadLocationsCollection = (page: number, filter?: string) => {
+    getLocationsCollection(page, filter).then((data) => {
       setLocationsCollection(
         mapToCollection(data.results, mapLocationsFromApiToVm)
       );

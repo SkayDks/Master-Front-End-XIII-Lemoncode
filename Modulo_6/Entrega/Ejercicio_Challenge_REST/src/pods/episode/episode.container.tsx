@@ -20,6 +20,5 @@ export const EpisodeContainer: React.FunctionComponent = (props) => {
     }
   }, []);
 
-
-  return <EpisodeComponent episode={episode}  />;
+  return <EpisodeComponent episode={episode} />;
 };

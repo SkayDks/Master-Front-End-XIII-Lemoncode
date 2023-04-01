@@ -14,16 +14,16 @@ export const LocationComponent: React.FunctionComponent<Props> = (props) => {
 
   return (
     <Formik
-      onSubmit={()=>{}}
+      onSubmit={() => {}}
       initialValues={location}
       enableReinitialize={true}
       validate={formValidation.validateForm}
     >
       {() => (
         <Form className={classes.root}>
-          <TextFieldComponent name="name" label="Name" disabled/>      
-          <TextFieldComponent name="dimension" label="Dimension" disabled/>
-          <TextFieldComponent name="type" label="Type" disabled/>
+          <TextFieldComponent name="name" label="Name" disabled />
+          <TextFieldComponent name="dimension" label="Dimension" disabled />
+          <TextFieldComponent name="type" label="Type" disabled />
         </Form>
       )}
     </Formik>
