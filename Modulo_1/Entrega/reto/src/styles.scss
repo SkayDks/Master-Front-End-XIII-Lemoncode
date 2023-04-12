@@ -1,0 +1,62 @@
+@use "./media.scss" as *;
+@use "./header.scss" as *;
+@use "./main.scss" as *;
+@import url("https://fonts.googleapis.com/css2?family=Jost&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Jost";
+  background: #141414;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  & > header {
+    @include header();
+    .header-logo {
+      @include header-logo();
+      .platform-title {
+        @include max-screen-1280();
+      }
+    }
+    .header-buttons {
+      @include header-buttons();
+    }
+  }
+  & > main {
+    & > .section-title {
+      font-size: 1.3rem;
+    }
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    margin: 1rem;
+    .top {
+      @include max-screen-780();
+      flex-direction: row-reverse;
+      flex-wrap: nowrap;
+      .top-item:nth-child(-n + 2) {
+        @include max-screen-1280();
+      }
+      .top-item {
+        @include item(225px);
+      }
+    }
+    section {
+      @include min-screen-1700();
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+
+      .item {
+        @include item(250px);
+      }
+    }
+  }
+}

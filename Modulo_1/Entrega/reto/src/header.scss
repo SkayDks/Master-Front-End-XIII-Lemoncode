@@ -1,0 +1,33 @@
+@mixin header {
+  background-color: #141414;
+  font-size: 1.3rem;
+  top: 0;
+  position: sticky;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin header-logo {
+  display: flex;
+  margin: 1rem;
+  align-items: center;
+  .platform-title {
+    margin: 1rem;
+  }
+}
+@mixin header-buttons {
+  display: flex;
+  align-items: center;
+  & > div {
+    cursor: pointer;
+    margin: 1rem;
+    padding: 0.5rem;
+    border-radius: 15%;
+    transition: color 1s, background-color 1s;
+    &:hover {
+      color: #141414;
+      background-color: white;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@media screen and (max-width: 1280px) {
+  #top-text::after {
+    content: "3";
+  }
+}
+@media screen and (min-width: 1281px) {
+  #top-text::after {
+    content: "5";
+  }
+}
+
+@mixin max-screen-1280 {
+  @media screen and (max-width: 1280px) {
+    #top-text::after {
+      content: "3";
+    }
+    & {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 1281px) {
+    #top-text::after {
+      content: "5";
+    }
+  }
+}
+
+@mixin max-screen-780 {
+  @media screen and (max-width: 780px) {
+    & {
+      flex-direction: column-reverse;
+      .top-item + div {
+        &:hover {
+          width: 55%;
+        }
+        width: 50%;
+      }
+    }
+  }
+}
+
+@mixin min-screen-1700 {
+  @media screen and (min-width: 1700px) {
+    & {
+      flex-wrap: nowrap;
+    }
+  }
+}

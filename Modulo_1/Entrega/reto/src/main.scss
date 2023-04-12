@@ -1,0 +1,18 @@
+@mixin item($minWidht) {
+  img {
+    cursor: pointer;
+    width: 100%;    
+  }
+  &:hover {
+    width: 25%;
+  }
+  width: 20%;
+  transition: width 0.5s;
+  align-items: center;
+  margin: 0.5rem 0.2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-width: $minWidht;
+  justify-content: center;
+}
