@@ -39,7 +39,7 @@ export const Dialog: React.FC<DialogFullProps> = ({
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={handelClickClose}>Disagree</Button>
+        <Button onClick={handelClickClose}>Close</Button>
       </DialogActions>
     </DialogMui>
   );

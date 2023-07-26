@@ -18,7 +18,7 @@
   height: 70px;
 }
 
-.container-search {
+.container-search, .container-pages {
   display: flex;
   gap: 10px;
   flex-direction: row;

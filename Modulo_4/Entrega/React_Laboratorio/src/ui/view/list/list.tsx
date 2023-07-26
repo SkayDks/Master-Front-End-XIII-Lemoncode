@@ -3,16 +3,11 @@ import React from "react";
 import { getAvatarEntity, getMembers } from "@/core/apis/githubApi";
 import { Card } from "@/common";
 import classes from "./list.styles.css";
-import { Pagination, Typography } from "@mui/material";
+import { useDebounce } from "use-debounce";
 
 interface MemberEntity {
   id: string;
   login: string;
-  avatar_url: string;
-}
-
-interface Entity {
-  name: string;
   avatar_url: string;
 }
 
@@ -21,10 +16,12 @@ export const ListPage: React.FC = () => {
   const [entity, setEntity] = React.useState<string>("Lemoncode");
   const [avatarEntity, setAvatarEntity] = React.useState<string>();
 
+  const [debounceEntity] = useDebounce(entity, 1000)
+
   React.useEffect(() => {
-    getMembers(entity).then((data) => setMembers(data));
-    getAvatarEntity(entity).then((data) => setAvatarEntity(data.avatar_url));
-  }, [entity]);
+    getMembers(debounceEntity).then((data) => setMembers(data));
+    getAvatarEntity(debounceEntity).then((data) => setAvatarEntity(data.avatar_url));
+  }, [debounceEntity]);
 
   return (
     <>
@@ -44,8 +41,6 @@ export const ListPage: React.FC = () => {
             />
           </>
         ))}
-        {/* <Typography>Page: {page}</Typography>
-        <Pagination count={10} page={page} onChange={handleChange} /> */}
       </div>
     </>
   );

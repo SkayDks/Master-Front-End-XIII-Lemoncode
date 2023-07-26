@@ -3,15 +3,16 @@ import { generatePath, Route } from "react-router-dom";
 interface SwitchRoutes {
     root: string;
     list: string;
-    detail: string;
+    rickamorty: string;
 }
 
 export const switchRoutes: SwitchRoutes = {
     root: "/",
     list: "/list",
-    detail: "/detail/:id",
+    rickamorty: "/rickamorty",
 }
 
+/* 
 interface Routes extends Omit<SwitchRoutes, "detail"> {
     detail: (id: string) => string;
 }
@@ -19,4 +20,4 @@ interface Routes extends Omit<SwitchRoutes, "detail"> {
 export const routes: Routes = {
  ...switchRoutes,
  detail:(id:string) => generatePath("/detail/:id", {id}),
-}
+} */
