@@ -1,11 +1,25 @@
-import { render } from '@testing-library/vue'
-import Card from './Card.vue'
+import Card from "./Card.vue";
+import { render } from "@testing-library/vue";
 
-describe('Card', () => {
-  it('renders the card', () => {
-    const { getByText } = render(Card)
+const factoryMember = (avatar_url: string, login: string) => ({
+  avatar_url,
+  login,
+});
 
-    getByText('Cart 0')
-  })
-  
-})
+describe("Card", () => {
+  it("renders the card name", () => {
+    const { getByText } = render(Card, {
+      props: { member: factoryMember("fake_url", "Paco") },
+    });
+
+    getByText("Paco");
+  });
+
+  it("renders the card img", () => {
+    const { getByRole, getByAltText } = render(Card, {
+      props: { member: factoryMember("fake_url", "Paco") },
+    });
+    expect(getByRole("img").getAttribute("src")).toEqual("fake_url");
+    getByAltText("Paco");
+  });
+});
