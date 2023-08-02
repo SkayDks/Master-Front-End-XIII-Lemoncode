@@ -1,3 +1,6 @@
+$color: azure;
+$background: black;
+
 .container {
   display: flex;
   align-items: center;
@@ -7,4 +10,12 @@
 .img-logo {
   width: 100px;
   margin-right: 10px;
+}
+
+.hola{
+  color: $color;
+  background-color: $background;
+  font-weight: 700;
+  border-radius: 70%;
+  padding: 10px 15px;;
 }

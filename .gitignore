@@ -9,6 +9,6 @@ dist
 node_modules
 yarn.lock
 .cache
-
+parcel-bundle-reports
 build/
 transpiled/
