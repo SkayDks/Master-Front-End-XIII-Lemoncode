@@ -8,13 +8,15 @@
   "source": "src/index.html",
   "scripts": {
     "start": "run-p -l type-check:watch start:dev",
-    "start:dev": "rimraf dist && parcel --open",
+    "start:dev": "rimraf  && parcel --open",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
     "build": "run-p -l type-check build:prod",
     "build:prod": "rimraf dist && parcel build",
-    "build:pref": "run-p -l type-check bundle-analyzer",
-    "bundle-analyzer": "rimraf parcel-bundle-reports && npm run build:prod -- --reporter @parcel/reporter-bundle-analyzer",
+    "build:pref": "run-p -l type-check bundle-analyzer clear-analyzer && npm run open:reporter",
+    "bundle-analyzer": "parcel build --reporter @parcel/reporter-bundle-analyzer",
+    "clear-analyzer": "rimraf parcel-bundle-reports dist",
+    "open:reporter": "parcel ./parcel-bundle-reports/default.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "@parcel/transformer-sass": {
