@@ -8,7 +8,7 @@
   "source": "src/index.html",
   "scripts": {
     "start": "run-p -l type-check:watch start:dev",
-    "start:dev": "rimraf  && parcel --open",
+    "start:dev": "rimraf dist && parcel --open",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
     "build": "run-p -l type-check build:prod",
